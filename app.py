@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'flask_final'
 
-# Updated path to include the database file name
+# Updated path to include the database asdfasdfasdfasdfasdfasdfasdfasdfasdffile name
 app.config['SQLALCHEMY_DATABASE_URI'] = r'sqlite:///D:/SELAVONG/SCHOOL/SETEC/Y4/S1/Python/Midterm/database.db'
 db = SQLAlchemy(app)
 
