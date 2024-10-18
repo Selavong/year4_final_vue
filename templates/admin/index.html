@@ -1,0 +1,239 @@
+{% extends "admin/layout/layout.html" %}
+
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+{% block page_content %}
+
+<main class="p-6">
+    {{ super() }}
+
+    <div class="grid 2xl:grid-cols-5 lg:grid-cols-6 md:grid-cols-2 gap-6 mb-6">
+        <div class="2xl:col-span-1 lg:col-span-2">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="grow overflow-hidden">
+                            <h5 class="text-base/3 text-gray-400 font-normal mt-0" title="Number of Customers">
+                                Customers</h5>
+                            <h3 class="text-2xl my-6">54,214</h3>
+                            <p class="text-gray-400 truncate">
+                                <span class="bg-success rounded-md text-xs px-1.5 py-0.5 text-white me-1"><i
+                                        class="ri-arrow-up-line"></i> 2,541</span>
+                                <span>Since last month</span>
+                            </p>
+                        </div>
+                        <div class="shrink">
+                            <div id="widget-customers" class="apex-charts" data-colors="#47ad77,#e3e9ee"></div>
+                        </div>
+                    </div>
+                </div> <!-- end p-6-->
+            </div> <!-- end card-->
+        </div>
+
+        <div class="2xl:col-span-1 lg:col-span-2">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="grow overflow-hidden">
+                            <h5 class="text-base/3 text-gray-400 font-normal mt-0" title="Number of Orders">
+                                Orders</h5>
+                            <h3 class="text-2xl my-6">7,543</h3>
+                            <p class="text-gray-400 truncate">
+                                <span class="bg-danger rounded-md text-xs px-1.5 py-0.5 text-white me-1"><i
+                                        class="ri-arrow-down-line"></i> 1.08%</span>
+                                <span>Since last month</span>
+                            </p>
+                        </div>
+                        <div id="widget-orders" class="apex-charts" data-colors="#3e60d5,#e3e9ee"></div>
+                    </div>
+                </div> <!-- end p-6-->
+            </div> <!-- end card-->
+        </div>
+
+        <div class="2xl:col-span-1 lg:col-span-2">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="grow overflow-hidden">
+                            <h5 class="text-base/3 text-gray-400 font-normal mt-0" title="Average Revenue">
+                                Revenue</h5>
+                            <h3 class="text-2xl my-6">$9,254</h3>
+                            <p class="text-gray-400 truncate">
+                                <span class="bg-danger rounded-md text-xs px-1.5 py-0.5 text-white me-1"><i
+                                        class="ri-arrow-down-line"></i> 7.00%</span>
+                                <span>Since last month</span>
+                            </p>
+                        </div>
+                        <div id="widget-revenue" class="apex-charts" data-colors="#16a7e9,#e3e9ee"></div>
+                    </div>
+
+                </div> <!-- end p-6-->
+            </div> <!-- end card-->
+        </div>
+
+        <div class="2xl:col-span-1 lg:col-span-3">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="grow overflow-hidden">
+                            <h5 class="text-base/3 text-gray-400 font-normal mt-0" title="Growth">Growth</h5>
+                            <h3 class="text-2xl my-6">+ 20.6%</h3>
+                            <p class="text-gray-400 truncate">
+                                <span class="bg-success rounded-md text-xs px-1.5 py-0.5 text-white me-1"><i
+                                        class="ri-arrow-up-line"></i> 4.87%</span>
+                                <span>Since last month</span>
+                            </p>
+                        </div>
+                        <div id="widget-growth" class="apex-charts" data-colors="#ffc35a,#e3e9ee"></div>
+                    </div>
+
+                </div> <!-- end p-6-->
+            </div> <!-- end card-->
+        </div>
+
+        <div class="2xl:col-span-1 lg:col-span-3 md:col-span-2">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="grow overflow-hidden">
+                            <h5 class="text-base/3 text-gray-400 font-normal mt-0" title="Conversation Ratio">
+                                Conversation</h5>
+                            <h3 class="text-2xl my-6">9.62%</h3>
+                            <p class="text-gray-400 truncate">
+                                <span class="bg-success rounded-md text-xs px-1.5 py-0.5 text-white me-1"><i
+                                        class="ri-arrow-up-line"></i> 3.07%</span>
+                                <span>Since last month</span>
+                            </p>
+                        </div>
+                        <div id="widget-conversation" class="apex-charts" data-colors="#f15776,#e3e9ee"></div>
+                    </div>
+
+                </div> <!-- end p-6-->
+            </div> <!-- end card-->
+        </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6 mb-6">
+        <div class="lg:col-span-2">
+            <div class="card">
+                <div class="flex card-header justify-between items-center">
+                    <h4 class="card-title">Revenue</h4>
+                    <div>
+                        <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                data-fc-placement="bottom-end" type="button">
+                            <i class="ri-more-2-fill text-xl"></i>
+                        </button>
+                        <div class="fc-dropdown fc-dropdown-open:opacity-100 opacity-0 min-w-40 z-50 transition-all duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-md py-1 hidden">
+                            <a class="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                               href="javascript: void(0);">Sales Report</a>
+                            <a class="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                               href="javascript: void(0);">Export Report</a>
+                            <a class="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                               href="javascript: void(0);">Profit</a>
+                            <a class="flex items-center py-1.5 px-5 text-sm text-gray-500 hover:bg-slate-100 hover:text-slate-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                               href="javascript: void(0);">Action</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light/40 border-b border-gray-100 dark:bg-light/5 dark:border-b-gray-700">
+                    <div class="flex flex-wrap justify-around items-center text-center">
+                        <div class="w-1/2 lg:w-1/4">
+                            <p class="text-gray-400 mt-6 mb-4"><i class="ri-donut-chart-fill"></i> Current Week
+                            </p>
+                            <h3 class="text-2xl font-normal mb-6">
+                                <span>$1705.54</span>
+                            </h3>
+                        </div>
+                        <div class="w-1/2 lg:w-1/4">
+                            <p class="text-gray-400 mt-6 mb-4"><i class="ri-donut-chart-fill"></i> Previous Week
+                            </p>
+                            <h3 class="text-2xl font-normal mb-6">
+                                <span>$6,523.25 <i class="ri-corner-right-up-fill text-success"></i></span>
+                            </h3>
+                        </div>
+                        <div class="w-1/2 lg:w-1/4">
+                            <p class="text-gray-400 mt-6 mb-4"><i class="ri-donut-chart-fill"></i> Conversion
+                            </p>
+                            <h3 class="text-2xl font-normal mb-6">
+                                <span>7.25%</span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div id="revenue-chart" class="apex-charts" data-colors="#47ad77,#e3e9ee"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-1">
+            <div class="card">
+                <div class="p-6">
+                    <h4 class="card-title">Total Sales</h4>
+                    <p class="text-gray-400 truncate">Some alert about the data....</p>
+                    <div class="mt-6 mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-base font-normal">North America</span>
+                            <span class="text-base font-normal">$2,895.00</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-base font-normal">South America</span>
+                            <span class="text-base font-normal">$1,856.00</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-base font-normal">Europe</span>
+                            <span class="text-base font-normal">$4,454.00</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-base font-normal">Asia</span>
+                            <span class="text-base font-normal">$3,520.00</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-base font-normal">Africa</span>
+                            <span class="text-base font-normal">$2,000.00</span>
+                        </div>
+                    </div>
+                </div> <!-- end p-6-->
+            </div> <!-- end card-->
+        </div>
+    </div>
+
+    <div class="card mb-6">
+        <div class="p-6">
+            <h4 class="card-title">Top Selling Products</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Orders</th>
+                        <th scope="col">Available</th>
+                        <th scope="col">Seller</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product 1</td>
+                        <td>$20.00</td>
+                        <td>150</td>
+                        <td>30</td>
+                        <td>Seller A</td>
+                    </tr>
+                    <tr>
+                        <td>Product 2</td>
+                        <td>$15.00</td>
+                        <td>120</td>
+                        <td>25</td>
+                        <td>Seller B</td>
+                    </tr>
+
+                    <!-- Add more product rows as needed -->
+                </tbody>
+            </table>
+        </div> <!-- end p-6-->
+    </div> <!-- end card-->
+
+</main>
+
+{% endblock %}
